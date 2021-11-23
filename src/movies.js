@@ -8,6 +8,7 @@ function getAllDirectors(arr) {
     return currentDirector.director
   });
 
+
   return directors
 
 }
@@ -110,7 +111,20 @@ function orderAlphabetically(arr) {
 }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-function turnHoursToMinutes() {}
+function turnHoursToMinutes(arr) {
+ copy4 = JSON.parse(JSON.stringify(arr))
+
+ for(let t = 0; t < copy4.length; t++){
+   if(copy4[t].duration.length > 2){
+  copy4[t].duration = (copy4[t].duration[0]*60) + (copy4[t].duration[3]*10) + (copy4[t].duration[4]*1)
+  }
+   if(copy4[t].duration.length <= 2){
+  copy4[t].duration = (copy4[t].duration[0]*60)
+  }
+}
+
+  return copy4
+}
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
 function bestYearAvg() {}
